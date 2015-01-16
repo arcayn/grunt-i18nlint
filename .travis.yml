@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - npm install -g grunt-cli
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'grunt-hslint' ]; then cd .. && eval "mv $currentfolder grunt-hslint" && cd grunt-hslint; fi
+

@@ -1,0 +1,47 @@
+{
+  "name": "grunt-hslint",
+  "version": "0.0.0",
+  "description": "Find hardcoded, untranslated strings in HTML and template source files",
+  "homepage": "https://github.com/jwarby/grunt-hslint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jwarby/grunt-hslint"
+  },
+  "author": {
+    "name": "James Warwood",
+    "email": "james.duncan.1991@googlemail.com",
+    "url": "https://github.com/jwarby"
+  },
+  "contributors": [],
+  "keywords": [
+    "gruntplugin",
+    "i18n",
+    "hardcoded",
+    "untranslated",
+    "translate",
+    "strings",
+    "hslint"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^2.0.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "bugs": "https://github.com/jwarby/grunt-hslint/issues",
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "cheerio": "^0.18.0",
+    "hslint": "git://github.com/jwarby/hslint.git"
+  }
+}
