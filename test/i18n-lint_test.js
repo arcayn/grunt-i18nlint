@@ -14,7 +14,7 @@ var path = require('path');
 // "Constants"
 var MESSAGES = {
   text: 'Hardcoded <.*?> tag',
-  attr: 'Hardcoded %s attribute',
+  attr: 'Hardcoded \'%s\' attribute',
   ok: 'No hardcoded strings'
 };
 
@@ -31,7 +31,6 @@ var execOptions = {
  * @param {Function} callback  The callback function to the exec call
  */
 var runTask = function(target, callback) {
-  console.log('grunt i18nlint:' + target, execOptions);
   exec('grunt i18nlint:' + target, execOptions, callback);
 };
 
@@ -127,7 +126,7 @@ exports.I18nLint = {
     test.expect(1);
 
     runTask('highlighting', function(err, stdout) {
-      test.equal(stdout.indexOf('^'), 194);
+      test.equal(stdout.indexOf('^'), 198);
 
       test.done();
     });
@@ -154,9 +153,9 @@ exports.I18nLint = {
     test.expect(1);
 
     runTask('reporter_built_in', function(err, stdout) {
-      test.notEqual(
-        stdout.search(/.*?\.html: line \d+, column \d+, Hardcoded/),
-        -1
+      test.equal(
+        stdout.match(/(.*?\.html:\d+:\d+ Hardcoded.*?)/g).length,
+        10
       );
 
       test.done();

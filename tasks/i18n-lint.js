@@ -69,7 +69,12 @@ module.exports = function(grunt) {
           if (errors.length) {
             tasksFailed++;
 
-            reporter(errors);
+            reporter(errors.map(function(error) {
+              return {
+                file: srcFile,
+                error: error
+              };
+            }));
           }
         });
       });

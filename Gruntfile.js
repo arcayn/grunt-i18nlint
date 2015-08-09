@@ -85,7 +85,7 @@ module.exports = function (grunt) {
       reporter_built_in: {
         src: 'test/fixtures/testing.html',
         options: {
-          reporter: 'simple'
+          reporter: 'unix'
         }
       },
       reporter_non_existent: {
