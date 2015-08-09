@@ -32,7 +32,7 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-nodeunit": "^0.4.1",
-    "jshint-stylish": "^1.0.0",
+    "jshint-stylish": "^2.0.1",
     "load-grunt-tasks": "^3.1.0"
   },
   "scripts": {
@@ -40,7 +40,7 @@
   },
   "bugs": "https://github.com/jwarby/grunt-i18nlint/issues",
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.1.0",
     "i18n-lint": "git://github.com/jwarby/i18n-lint.git"
   }
 }
