@@ -1,12 +1,12 @@
-# grunt-hslint [![GitHub version](https://badge.fury.io/gh/jwarby%2Fgrunt-hslint.svg)](http://badge.fury.io/gh/jwarby%2Fgrunt-hslint)
+# grunt-i18nlint [![GitHub version](https://badge.fury.io/gh/jwarby%2Fgrunt-i18nlint.svg)](http://badge.fury.io/gh/jwarby%2Fgrunt-i18nlint)
 
-[![Build Status](https://secure.travis-ci.org/jwarby/grunt-hslint.png?branch=master)](https://travis-ci.org/jwarby/grunt-hslint)
-[![Dependency Status](https://david-dm.org/jwarby/grunt-hslint.svg?style=flat)](https://david-dm.org/jwarby/grunt-hslint)
-[![devDependency Status](https://david-dm.org/jwarby/grunt-hslint/dev-status.svg?style=flat)](https://david-dm.org/jwarby/grunt-hslint#info=devDependencies)
+[![Build Status](https://secure.travis-ci.org/jwarby/grunt-i18nlint.png?branch=master)](https://travis-ci.org/jwarby/grunt-i18nlint)
+[![Dependency Status](https://david-dm.org/jwarby/grunt-i18nlint.svg?style=flat)](https://david-dm.org/jwarby/grunt-i18nlint)
+[![devDependency Status](https://david-dm.org/jwarby/grunt-i18nlint/dev-status.svg?style=flat)](https://david-dm.org/jwarby/grunt-i18nlint#info=devDependencies)
 
 > An opinionated Grunt task for finding hardcoded, untranslated strings in HTML and template source files
 
-![grunt-hslint screenshot](screenshot.png)
+![grunt-i18nlint screenshot](screenshot.png)
 
 ## Getting Started
 This plugin requires Grunt.
@@ -14,27 +14,27 @@ This plugin requires Grunt.
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-hslint --save-dev
+npm install grunt-i18nlint --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-hslint');
+grunt.loadNpmTasks('grunt-i18nlint');
 ```
 
-## The "hslint" task
+## The "i18nlint" task
 
 The task assumes that your translation keys are similar in form to `'my.amazing.key'`.  The task can be used to
 detect potentially hardcoded strings in element text nodes, and optionally from a list of HTML attributes (think
 `alt`, `title`, etc.).
 
 ### Overview
-In your project's Gruntfile, add a section named `hslint` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `i18nlint` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  hslint: {
+  i18nlint: {
     options: {
       // Task-specific options go here.
     },
@@ -72,7 +72,7 @@ An array which is to contain the start and end delimiters of the templates to be
 
 ```js
 grunt.initConfig({
-  hslint: {
+  i18nlint: {
     options: {
       templateDelimiters: ['<%', '%>']
     },
@@ -85,7 +85,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-  hslint: {
+  i18nlint: {
     options: {
       templateDelimiters: ['{{', '}}']
     },
@@ -99,14 +99,14 @@ grunt.initConfig({
 
 #### options.reporter
 Type: `String` or `Function`
-Default value: `hslint.reporters.default`
+Default value: `i18nlint.reporters.default`
 
-- Set the HSLint reporter to use when outputting linting results.  If a function is provided, it will be called for each input file, with an array
+- Set the i18n-lint reporter to use when outputting linting results.  If a function is provided, it will be called for each input file, with an array
   containing the errors for found for the file.
 - If a string is provided, it must be a valid path or module name that can be `require`'d, and required file must export
   a `reporter` property.  The `reporter` property should be a function as described above
 
-See the [HSLint Documentation](https://jwarby.github.io/hslint) or visit the [hslint on GitHub](https://github.com/jwarby/hslint)
+See the [i18n-lint Documentation](https://jwarby.github.io/i18n-lint) or visit [i18n-lint on GitHub](https://github.com/jwarby/i18n-lint)
 for more information on reporters and error object descriptions.
 
 #### options.force
@@ -122,7 +122,7 @@ In this example, the default options are used, which means the task will check t
 
 ```js
 grunt.initConfig({
-  hslint: {
+  i18nlint: {
     src: '**/*.html'
   },
 })
@@ -133,7 +133,7 @@ In this example, attribute checking is disabled, and EJS templating is used:
 
 ```js
 grunt.initConfig({
-  hslint: {
+  i18nlint: {
     options: {
       templateDelimiters: ['<%', '%>'],
       attributes: null
@@ -148,7 +148,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Bugs and Feature Requests
 
-Please raise all bugs and feature requests on the [issue tracker](https://github.com/jwarby/grunt-hslint/issues).
+Please raise all bugs and feature requests on the [issue tracker](https://github.com/jwarby/grunt-i18nlint/issues).
 
 ## Release History
 _(Nothing yet)_

@@ -1,6 +1,6 @@
 /*
- * grunt-hslint
- * https://github.com/jwarby/grunt-hslint
+ * grunt-i18nlint
+ * https://github.com/jwarby/grunt-i18nlint
  *
  * Copyright (c) 2015 James Warwood
  * Licensed under the MIT license.
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
     },
 
     // Configuration to be run (and then tested).
-    hslint: {
+    i18nlint: {
       default_options: {
         src: 'test/fixtures/testing.html',
       },

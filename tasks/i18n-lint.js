@@ -1,6 +1,6 @@
 /*
- * grunt-hslint
- * https://github.com/jwarby/grunt-hslint
+ * grunt-i18nlint
+ * https://github.com/jwarby/grunt-i18nlint
  *
  * Copyright (c) 2015 James Warwood
  * Licensed under the MIT license.
@@ -15,18 +15,18 @@ module.exports = function(grunt) {
 
   // NPM dependencies
   var chalk = require('chalk');
-  var hslint = require('hslint');
+  var I18nLint = require('i18n-lint');
 
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
   grunt.registerMultiTask(
-    'hslint',
+    'i18nlint',
     'Find hardcoded, untranslated strings in HTML and template source files',
     function () {
 
       // Extend options with defaults
-      // @TODO move to lib/hslint.js
+      // @TODO move to lib/i18n-lint.js
       var options = this.options({
           force: false
         }),
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         case 'string':
 
           // Check if it's a built-in reporter
-          reporter = hslint.reporters[options.reporter];
+          reporter = I18nLint.reporters[options.reporter];
 
           if (!reporter) {
             try {
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           }
           break;
         case 'undefined':
-          reporter = hslint.reporters.default;
+          reporter = I18nLint.reporters.default;
           break;
         case 'function':
           break;
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 
         fileGroup.src.forEach(function(srcFile) {
 
-          var errors = hslint(srcFile, options);
+          var errors = I18nLint(srcFile, options);
           if (errors.length) {
             tasksFailed++;
 

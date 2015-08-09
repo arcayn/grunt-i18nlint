@@ -1,5 +1,5 @@
 /**
- * grunt-hslint tests
+ * grunt-i18nlint tests
  *
  * Copyright (c) 2015 James Warwood
  * Licensed under the MIT license.
@@ -25,13 +25,14 @@ var execOptions = {
 
 // Helpers
 /**
- * Run the `hslint` task via exec, with the given target.
+ * Run the `i18n-lint` task via exec, with the given target.
  *
  * @param {String} target      The target to run, e.g. 'default_options'
  * @param {Function} callback  The callback function to the exec call
  */
 var runTask = function(target, callback) {
-  exec('grunt hslint:' + target, execOptions, callback);
+  console.log('grunt i18nlint:' + target, execOptions);
+  exec('grunt i18nlint:' + target, execOptions, callback);
 };
 
 /**
@@ -68,7 +69,7 @@ var substringCount = function(context, substring) {
     test.ifError(value)
 */
 
-exports.hslint = {
+exports.I18nLint = {
   setUp: function(done) {
     // setup here if necessary
     done();

@@ -4,5 +4,5 @@ node_js:
 before_install:
   - npm install -g grunt-cli
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'grunt-hslint' ]; then cd .. && eval "mv $currentfolder grunt-hslint" && cd grunt-hslint; fi
+  - if [ "$currentfolder" != 'grunt-i18nlint' ]; then cd .. && eval "mv $currentfolder grunt-i18nlint" && cd grunt-i18nlint; fi
 
