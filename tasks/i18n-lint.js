@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 
         fileGroup.src.forEach(function(srcFile) {
           var errors = [];
-          if (!options.excludeFiles.includes(srcFile)) {
+          if (!options.excludeFiles || !options.excludeFiles.includes(srcFile)) {
             errors = I18nLint(srcFile, options);
           }
           if (errors.length) {
