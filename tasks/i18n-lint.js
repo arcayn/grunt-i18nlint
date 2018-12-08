@@ -33,6 +33,7 @@ module.exports = function(grunt) {
         tasksFailed = 0,
         totalTasks = 0,
         reporter = options.reporter,
+        excludeFiles = [],
         done = this.async();
 
       switch (typeof options.reporter) {
@@ -64,8 +65,10 @@ module.exports = function(grunt) {
         totalTasks += fileGroup.src.length;
 
         fileGroup.src.forEach(function(srcFile) {
-
-          var errors = I18nLint(srcFile, options);
+          var errors = [];
+          if (!options.excludeFiles.includes(srcFile)) {
+            errors = I18nLint(srcFile, options);
+          }
           if (errors.length) {
             tasksFailed++;
 
