@@ -41,6 +41,6 @@
   "bugs": "https://github.com/jwarby/grunt-i18nlint/issues",
   "dependencies": {
     "chalk": "^1.1.0",
-    "i18n-lint": "git://github.com/jwarby/i18n-lint.git"
+    "i18n-lint": "git://github.com/arcayn/i18n-lint.git"
   }
 }
